@@ -11,6 +11,9 @@
 
 @property (nonatomic, readwrite, assign) BOOL hasMore;
 @property (nonatomic, readwrite, assign) BOOL isFetching;
+@property (nonatomic, readwrite, assign) NSUInteger position;
+@property (nonatomic, readwrite, assign) NSUInteger count;
+
 @property (nonatomic, assign) NSRange fetchRange;
 @property (nonatomic, strong) id fetchObject;
 @property (nonatomic, copy) CKFeedSourceFetchCompletionBlock completionBlock;
@@ -23,6 +26,8 @@
 
 @synthesize hasMore = _hasMore;
 @synthesize isFetching = _isFetching;
+@synthesize position = _position;
+@synthesize count = _count;
 
 #pragma mark Initialization
 
@@ -40,6 +45,8 @@
 - (void)reset {
 	self.hasMore = YES;
 	self.isFetching = NO;
+    self.position = 0;
+    self.count = NSNotFound;
     self.fetchObject = nil;
 }
 
@@ -78,6 +85,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         self.hasMore = (items.count >= self.fetchRange.length);
         self.isFetching = NO;
+        self.position += items.count;
         self.fetchObject = nil;
         
         if (self.completionBlock) {

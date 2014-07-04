@@ -11,6 +11,8 @@
 
 @synthesize hasMore = _hasMore;
 @synthesize isFetching = _isFetching;
+@synthesize position = _position;
+@synthesize count = _count;
 
 - (BOOL)fetchRange:(NSRange)range completionBlock:(CKFeedSourceFetchCompletionBlock)completionBlock {
     return NO;

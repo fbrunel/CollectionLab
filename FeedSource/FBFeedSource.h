@@ -11,6 +11,8 @@ typedef void (^CKFeedSourceFetchCompletionBlock)(NSArray *items, NSError *error)
 
 @property (nonatomic, readonly, assign) BOOL hasMore;
 @property (nonatomic, readonly) BOOL isFetching; // FIXME: use a getter named "isFetching"; name the property "fetching"
+@property (nonatomic, readonly) NSUInteger position;
+@property (nonatomic, readonly) NSUInteger count;
 
 - (BOOL)fetchRange:(NSRange)range completionBlock:(CKFeedSourceFetchCompletionBlock)completionBlock;
 - (void)cancel;
