@@ -7,6 +7,7 @@
 //
 
 #import "TimelineViewController.h"
+#import "TweetCell.h"
 #import "Twitter.h"
 
 @interface TimelineViewController ()
@@ -86,12 +87,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     Tweet *tweet = self.tweets[indexPath.row];
     
-    [(UILabel *)[cell viewWithTag:1] setText:tweet.text];
-    [(UILabel *)[cell viewWithTag:2] setText:tweet.userName];
-
+    cell.contentLabel.text = tweet.text;
+    cell.usernameLabel.text = tweet.userName;
+    cell.dateLabel.text = nil;
+    
     return cell;
 }
 

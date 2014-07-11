@@ -27,6 +27,7 @@
 		714377AF1961DC9000A3230E /* FeedSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377AE1961DC9000A3230E /* FeedSourceTests.m */; };
 		714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377B91961DC9F00A3230E /* FBMutableFeedSource.m */; };
 		714377C31961F3EB00A3230E /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377C21961F3EB00A3230E /* TimelineViewController.m */; };
+		71709C441970630F00EF910D /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71709C431970630F00EF910D /* TweetCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		714377BE1961EA7300A3230E /* FBFeedSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedSource.h; sourceTree = "<group>"; };
 		714377C11961F3EB00A3230E /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		714377C21961F3EB00A3230E /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		71709C421970630F00EF910D /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		71709C431970630F00EF910D /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				7139435F196272BE00668B4D /* Twitter.m */,
 				714377C11961F3EB00A3230E /* TimelineViewController.h */,
 				714377C21961F3EB00A3230E /* TimelineViewController.m */,
+				71709C421970630F00EF910D /* TweetCell.h */,
+				71709C431970630F00EF910D /* TweetCell.m */,
 				714377981961DC9000A3230E /* AppDelegate.h */,
 				714377991961DC9000A3230E /* AppDelegate.m */,
 				7139435419620EAD00668B4D /* Main.storyboard */,
@@ -283,6 +288,7 @@
 				71394360196272BE00668B4D /* Twitter.m in Sources */,
 				7139435D1962273B00668B4D /* FBFeedSource.m in Sources */,
 				714377C31961F3EB00A3230E /* TimelineViewController.m in Sources */,
+				71709C441970630F00EF910D /* TweetCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
