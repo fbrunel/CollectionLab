@@ -8,8 +8,8 @@
 
 @interface TweetCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *contentLabel;
-@property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
