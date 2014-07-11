@@ -34,6 +34,19 @@
     return [NSString stringWithFormat:@"@%@", [self.JSONObject valueForKeyPath:@"user.screen_name"]];
 }
 
+- (NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+    NSDate *date = [formatter dateFromString:[self.JSONObject valueForKey:@"created_at"]];
+    return date;
+}
+
+- (NSString *)dateRepresentation {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm"]; // was @"eee MMM dd hh:mm"; FIXME: should display date for after the next day
+    return [formatter stringFromDate:self.date];
+}
+
 @end
 
 //

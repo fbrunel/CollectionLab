@@ -92,7 +92,7 @@
     
     cell.contentLabel.text = tweet.text;
     cell.usernameLabel.text = tweet.userName;
-    cell.dateLabel.text = nil;
+    cell.dateLabel.text = tweet.dateRepresentation;
     
     return cell;
 }
