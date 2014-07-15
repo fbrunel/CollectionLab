@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BAt-hO-bba">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BAt-hO-bba">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -12,8 +12,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" id="Z7Y-T8-E8A">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" id="Z7Y-T8-E8A" customClass="TweetCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z7Y-T8-E8A" id="YhO-7Z-6NG">
@@ -28,7 +29,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n71-JO-Lrp">
-                                            <rect key="frame" x="10" y="60" width="300" height="22"/>
+                                            <rect key="frame" x="10" y="60" width="75" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="KVe-VA-UjA"/>
@@ -37,17 +38,34 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIJ-Lf-3N5">
+                                            <rect key="frame" x="281" y="60" width="29" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="MEl-pJ-WK3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VZm-7w-FG9" firstAttribute="leading" secondItem="YhO-7Z-6NG" secondAttribute="leading" constant="10" id="7g9-By-0gW"/>
+                                        <constraint firstItem="n71-JO-Lrp" firstAttribute="baseline" secondItem="YIJ-Lf-3N5" secondAttribute="baseline" id="86k-JJ-01w"/>
+                                        <constraint firstAttribute="trailing" secondItem="YIJ-Lf-3N5" secondAttribute="trailing" constant="10" id="8z0-Gh-Xby"/>
                                         <constraint firstItem="n71-JO-Lrp" firstAttribute="leading" secondItem="YhO-7Z-6NG" secondAttribute="leading" constant="10" id="AhJ-iG-IMs"/>
-                                        <constraint firstAttribute="trailing" secondItem="n71-JO-Lrp" secondAttribute="trailing" constant="10" id="PzE-lM-hIa"/>
+                                        <constraint firstAttribute="bottom" secondItem="YIJ-Lf-3N5" secondAttribute="bottom" constant="5" id="DvR-bu-LkH"/>
                                         <constraint firstItem="VZm-7w-FG9" firstAttribute="top" secondItem="YhO-7Z-6NG" secondAttribute="top" constant="5" id="RWs-3J-quq"/>
                                         <constraint firstAttribute="bottom" secondItem="n71-JO-Lrp" secondAttribute="bottom" constant="5" id="oqb-La-YpN"/>
                                         <constraint firstAttribute="trailing" secondItem="VZm-7w-FG9" secondAttribute="trailing" constant="5" id="u7S-HU-yi8"/>
                                         <constraint firstItem="n71-JO-Lrp" firstAttribute="top" secondItem="VZm-7w-FG9" secondAttribute="bottom" id="xMo-Og-56x"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="VZm-7w-FG9" id="cxp-0q-3k0"/>
+                                    <outlet property="dateLabel" destination="YIJ-Lf-3N5" id="UJr-cO-i59"/>
+                                    <outlet property="usernameLabel" destination="n71-JO-Lrp" id="mkH-2v-4Y1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
