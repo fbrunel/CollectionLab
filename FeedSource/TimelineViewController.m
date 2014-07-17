@@ -2,7 +2,7 @@
 //  TimelineViewController.m
 //  FeedSource
 //
-//  Created by Fred Brunel on 2014-06-30.
+//  Created by Fred Brunel on 2014-07-16.
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
@@ -11,69 +11,40 @@
 #import "Twitter.h"
 
 @interface TimelineViewController ()
+
 @property (strong, nonatomic) Twitter *twitter;
 @property (strong, nonatomic) FBFeedSource *feedSource;
 @property (strong, nonatomic) NSMutableArray *tweets;
 @property (assign, nonatomic) NSUInteger page;
 @property (assign, nonatomic) NSUInteger length;
-@end
 
-//
+@end
 
 @implementation TimelineViewController
 
 - (void)awakeFromNib {
-    [self clearData];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
+    self.tweets = [NSMutableArray array];
+    self.page = 1;
+    self.length = 20;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    
     self.twitter = [[Twitter alloc] init];
     self.feedSource = [self.twitter sourceForHomeTimeline];
- 
+    
     [self fetchNext];
-}
-
-//
-
-- (void)clearData {
-    self.tweets = [NSMutableArray array];
-    self.page = 1;
-    self.length = 20;
 }
 
 - (void)fetchNext {
     TimelineViewController *__weak welf = self;
     [self.feedSource fetchRange:NSMakeRange(self.page, self.length) completionBlock:^(NSArray *items, NSError *error) {
         [welf.tweets addObjectsFromArray:items];
-        [welf.tableView reloadData];
+        [welf.collectionView reloadData];
         [welf updateTitle];
         welf.page++;
     }];
-}
-
-- (void)refresh:(UIRefreshControl *)refreshControl {
-    TimelineViewController *__weak welf = self;
-    BOOL result = [self.feedSource fetchRange:NSMakeRange(1, self.length) completionBlock:^(NSArray *items, NSError *error) {
-        [welf clearData];
-        [welf.tweets addObjectsFromArray:items];
-        [welf.tableView reloadData];
-        [welf updateTitle];
-        [refreshControl endRefreshing];
-        welf.page++;
-    }];
-    
-    if (result == NO)
-        [refreshControl endRefreshing];
 }
 
 - (void)updateTitle {
@@ -82,28 +53,33 @@
 
 //
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.tweets.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-    Tweet *tweet = self.tweets[indexPath.row];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    cell.contentLabel.text = tweet.text;
+    if (indexPath.row > self.tweets.count - 5)
+        [self fetchNext];
+    
+    TweetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TweetCell" forIndexPath:indexPath];
+    Tweet *tweet = self.tweets[indexPath.item];
+    
+    cell.textLabel.text = tweet.text;
     cell.usernameLabel.text = tweet.userName;
     cell.dateLabel.text = tweet.dateRepresentation;
     
     return cell;
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row > self.tweets.count - 5)
-        [self fetchNext];
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
 }
 
 @end
