@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7103E201197760E90022609F /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E200197760E90022609F /* TimelineViewController.m */; };
+		7103E204197762F10022609F /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E203197762F10022609F /* TweetCell.m */; };
 		7139435519620EAD00668B4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7139435419620EAD00668B4D /* Main.storyboard */; };
 		713943591962100400668B4D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713943581962100400668B4D /* Social.framework */; };
 		7139435B196210BF00668B4D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7139435A196210BF00668B4D /* Accounts.framework */; };
@@ -26,8 +28,8 @@
 		714377AD1961DC9000A3230E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714377AB1961DC9000A3230E /* InfoPlist.strings */; };
 		714377AF1961DC9000A3230E /* FeedSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377AE1961DC9000A3230E /* FeedSourceTests.m */; };
 		714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377B91961DC9F00A3230E /* FBMutableFeedSource.m */; };
-		714377C31961F3EB00A3230E /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377C21961F3EB00A3230E /* TimelineViewController.m */; };
-		71709C441970630F00EF910D /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71709C431970630F00EF910D /* TweetCell.m */; };
+		714377C31961F3EB00A3230E /* TableTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377C21961F3EB00A3230E /* TableTimelineViewController.m */; };
+		71709C441970630F00EF910D /* TableTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71709C431970630F00EF910D /* TableTweetCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7103E1FF197760E90022609F /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		7103E200197760E90022609F /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		7103E202197762F10022609F /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		7103E203197762F10022609F /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		7139435419620EAD00668B4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		713943581962100400668B4D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7139435A196210BF00668B4D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -68,10 +74,10 @@
 		714377B81961DC9900A3230E /* FBMutableFeedSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBMutableFeedSource.h; sourceTree = "<group>"; };
 		714377B91961DC9F00A3230E /* FBMutableFeedSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMutableFeedSource.m; sourceTree = "<group>"; };
 		714377BE1961EA7300A3230E /* FBFeedSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedSource.h; sourceTree = "<group>"; };
-		714377C11961F3EB00A3230E /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
-		714377C21961F3EB00A3230E /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
-		71709C421970630F00EF910D /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
-		71709C431970630F00EF910D /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		714377C11961F3EB00A3230E /* TableTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTimelineViewController.h; sourceTree = "<group>"; };
+		714377C21961F3EB00A3230E /* TableTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTimelineViewController.m; sourceTree = "<group>"; };
+		71709C421970630F00EF910D /* TableTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTweetCell.h; sourceTree = "<group>"; };
+		71709C431970630F00EF910D /* TableTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTweetCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +149,14 @@
 				71394362196276D000668B4D /* NSArray+Map.m */,
 				7139435E196272BE00668B4D /* Twitter.h */,
 				7139435F196272BE00668B4D /* Twitter.m */,
-				714377C11961F3EB00A3230E /* TimelineViewController.h */,
-				714377C21961F3EB00A3230E /* TimelineViewController.m */,
-				71709C421970630F00EF910D /* TweetCell.h */,
-				71709C431970630F00EF910D /* TweetCell.m */,
+				714377C11961F3EB00A3230E /* TableTimelineViewController.h */,
+				714377C21961F3EB00A3230E /* TableTimelineViewController.m */,
+				71709C421970630F00EF910D /* TableTweetCell.h */,
+				71709C431970630F00EF910D /* TableTweetCell.m */,
+				7103E1FF197760E90022609F /* TimelineViewController.h */,
+				7103E200197760E90022609F /* TimelineViewController.m */,
+				7103E202197762F10022609F /* TweetCell.h */,
+				7103E203197762F10022609F /* TweetCell.m */,
 				714377981961DC9000A3230E /* AppDelegate.h */,
 				714377991961DC9000A3230E /* AppDelegate.m */,
 				7139435419620EAD00668B4D /* Main.storyboard */,
@@ -284,11 +294,13 @@
 				7143779A1961DC9000A3230E /* AppDelegate.m in Sources */,
 				71394363196276D000668B4D /* NSArray+Map.m in Sources */,
 				714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */,
+				7103E201197760E90022609F /* TimelineViewController.m in Sources */,
+				7103E204197762F10022609F /* TweetCell.m in Sources */,
 				714377961961DC9000A3230E /* main.m in Sources */,
 				71394360196272BE00668B4D /* Twitter.m in Sources */,
 				7139435D1962273B00668B4D /* FBFeedSource.m in Sources */,
-				714377C31961F3EB00A3230E /* TimelineViewController.m in Sources */,
-				71709C441970630F00EF910D /* TweetCell.m in Sources */,
+				714377C31961F3EB00A3230E /* TableTimelineViewController.m in Sources */,
+				71709C441970630F00EF910D /* TableTweetCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

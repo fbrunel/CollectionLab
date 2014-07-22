@@ -11,7 +11,16 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupApperance];
     return YES;
+}
+
+- (void)setupApperance {
+    NSDictionary *attr = @{
+      NSForegroundColorAttributeName : [UIColor blackColor],
+      NSFontAttributeName : [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f]
+    };
+    [[UINavigationBar appearance] setTitleTextAttributes:attr];
 }
 
 @end
