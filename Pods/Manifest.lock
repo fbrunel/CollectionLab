@@ -13,6 +13,8 @@ PODS:
     - OMGHTTPURLRQ/UserAgent
   - PromiseKit (0.9.13):
     - PromiseKit/defaults
+  - PromiseKit/Accounts (0.9.13):
+    - PromiseKit/base
   - PromiseKit/base (0.9.13)
   - PromiseKit/defaults (0.9.13):
     - PromiseKit/Foundation
@@ -24,6 +26,9 @@ PODS:
     - OMGHTTPURLRQ
     - PromiseKit/base
   - PromiseKit/private (0.9.13)
+  - PromiseKit/Social (0.9.13):
+    - ChuzzleKit
+    - PromiseKit/base
   - PromiseKit/timing (0.9.13):
     - PromiseKit/base
   - PromiseKit/UIAnimation (0.9.13):
@@ -35,6 +40,8 @@ PODS:
 
 DEPENDENCIES:
   - PromiseKit
+  - PromiseKit/Accounts
+  - PromiseKit/Social
 
 SPEC CHECKSUMS:
   ChuzzleKit: 2d6a1f9ba844ebca126642990106b8c24de117f7

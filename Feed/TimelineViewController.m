@@ -47,14 +47,6 @@
     }).catch(^(NSError *error) {
         return;
     });
-
-//    TimelineViewController *__weak welf = self;
-//    [self.feedSource fetchRange:NSMakeRange(self.page, self.length) completionBlock:^(NSArray *items, NSError *error) {
-//        [welf.tweets addObjectsFromArray:items];
-//        [welf.collectionView reloadData];
-//        [welf updateTitle];
-//        welf.page++;
-//    }];
 }
 
 - (void)updateTitle {
