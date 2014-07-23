@@ -74,16 +74,26 @@
             request.account = twitterAccount;
             
             [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *httpResponse, NSError *error) {
-                NSArray *items = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+                id responseObject = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+                
+                if (error) {
+                    [feedSourceRef completeFetchWithError:error];
+                    return;
+                }
+                
+                if (httpResponse.statusCode >= 400) {
+                    NSDictionary *twitterErrorInfo = (NSDictionary *)responseObject;
+                    NSError *twitterError = [NSError errorWithDomain:@"TwitterErrorDomain" code:httpResponse.statusCode userInfo:twitterErrorInfo];
+                    [feedSourceRef completeFetchWithError:twitterError];
+                    return;
+                }
+                
+                NSArray *items = (NSArray *)responseObject;
                 NSArray *tweets = [items mapObjectsUsingBlock:^id(id object, NSUInteger index) {
                     return [[Tweet alloc] initWithJSONObject:object];
                 }];
                 
-                if (error) {
-                    [feedSourceRef completeFetchWithError:error];
-                } else {
-                    [feedSourceRef completeFetchWithItems:tweets];
-                }
+                [feedSourceRef completeFetchWithItems:tweets];
             }];
         }];
     };
