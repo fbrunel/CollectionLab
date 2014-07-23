@@ -29,8 +29,6 @@
 		714377AD1961DC9000A3230E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714377AB1961DC9000A3230E /* InfoPlist.strings */; };
 		714377AF1961DC9000A3230E /* FeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377AE1961DC9000A3230E /* FeedTests.m */; };
 		714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377B91961DC9F00A3230E /* FBMutableFeedSource.m */; };
-		714377C31961F3EB00A3230E /* TableTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377C21961F3EB00A3230E /* TableTimelineViewController.m */; };
-		71709C441970630F00EF910D /* TableTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71709C431970630F00EF910D /* TableTweetCell.m */; };
 		A1475EA538FA47689F92055C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F506FCE41D4A6A883381AC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -78,10 +76,6 @@
 		714377B81961DC9900A3230E /* FBMutableFeedSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBMutableFeedSource.h; sourceTree = "<group>"; };
 		714377B91961DC9F00A3230E /* FBMutableFeedSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMutableFeedSource.m; sourceTree = "<group>"; };
 		714377BE1961EA7300A3230E /* FBFeedSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedSource.h; sourceTree = "<group>"; };
-		714377C11961F3EB00A3230E /* TableTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTimelineViewController.h; sourceTree = "<group>"; };
-		714377C21961F3EB00A3230E /* TableTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTimelineViewController.m; sourceTree = "<group>"; };
-		71709C421970630F00EF910D /* TableTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTweetCell.h; sourceTree = "<group>"; };
-		71709C431970630F00EF910D /* TableTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTweetCell.m; sourceTree = "<group>"; };
 		8651432ABDBF41D9AB605D93 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A2F506FCE41D4A6A883381AC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,10 +154,6 @@
 				71394362196276D000668B4D /* NSArray+Map.m */,
 				7139435E196272BE00668B4D /* Twitter.h */,
 				7139435F196272BE00668B4D /* Twitter.m */,
-				714377C11961F3EB00A3230E /* TableTimelineViewController.h */,
-				714377C21961F3EB00A3230E /* TableTimelineViewController.m */,
-				71709C421970630F00EF910D /* TableTweetCell.h */,
-				71709C431970630F00EF910D /* TableTweetCell.m */,
 				7103E1FF197760E90022609F /* TimelineViewController.h */,
 				7103E200197760E90022609F /* TimelineViewController.m */,
 				7103E202197762F10022609F /* TweetCell.h */,
@@ -345,8 +335,6 @@
 				714377961961DC9000A3230E /* main.m in Sources */,
 				71394360196272BE00668B4D /* Twitter.m in Sources */,
 				7139435D1962273B00668B4D /* FBFeedSource.m in Sources */,
-				714377C31961F3EB00A3230E /* TableTimelineViewController.m in Sources */,
-				71709C441970630F00EF910D /* TableTweetCell.m in Sources */,
 				7101D5F3197F70EB0048492D /* FBFeedSource+Promise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
