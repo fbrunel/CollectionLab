@@ -26,7 +26,7 @@
 		714377A41961DC9000A3230E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 714377891961DC9000A3230E /* Foundation.framework */; };
 		714377A51961DC9000A3230E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7143778D1961DC9000A3230E /* UIKit.framework */; };
 		714377AD1961DC9000A3230E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714377AB1961DC9000A3230E /* InfoPlist.strings */; };
-		714377AF1961DC9000A3230E /* FeedSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377AE1961DC9000A3230E /* FeedSourceTests.m */; };
+		714377AF1961DC9000A3230E /* FeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377AE1961DC9000A3230E /* FeedTests.m */; };
 		714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377B91961DC9F00A3230E /* FBMutableFeedSource.m */; };
 		714377C31961F3EB00A3230E /* TableTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377C21961F3EB00A3230E /* TableTimelineViewController.m */; };
 		71709C441970630F00EF910D /* TableTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71709C431970630F00EF910D /* TableTweetCell.m */; };
@@ -55,22 +55,22 @@
 		7139435F196272BE00668B4D /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
 		71394361196276D000668B4D /* NSArray+Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Map.h"; sourceTree = "<group>"; };
 		71394362196276D000668B4D /* NSArray+Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Map.m"; sourceTree = "<group>"; };
-		714377861961DC9000A3230E /* FeedSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		714377861961DC9000A3230E /* Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		714377891961DC9000A3230E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7143778B1961DC9000A3230E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7143778D1961DC9000A3230E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		714377911961DC9000A3230E /* FeedSource-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedSource-Info.plist"; sourceTree = "<group>"; };
+		714377911961DC9000A3230E /* Feed-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Feed-Info.plist"; sourceTree = "<group>"; };
 		714377931961DC9000A3230E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		714377951961DC9000A3230E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		714377971961DC9000A3230E /* FeedSource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeedSource-Prefix.pch"; sourceTree = "<group>"; };
+		714377971961DC9000A3230E /* Feed-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Feed-Prefix.pch"; sourceTree = "<group>"; };
 		714377981961DC9000A3230E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		714377991961DC9000A3230E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7143779B1961DC9000A3230E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		714377A11961DC9000A3230E /* FeedSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		714377A11961DC9000A3230E /* FeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		714377A21961DC9000A3230E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		714377AA1961DC9000A3230E /* FeedSourceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedSourceTests-Info.plist"; sourceTree = "<group>"; };
+		714377AA1961DC9000A3230E /* FeedTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedTests-Info.plist"; sourceTree = "<group>"; };
 		714377AC1961DC9000A3230E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		714377AE1961DC9000A3230E /* FeedSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedSourceTests.m; sourceTree = "<group>"; };
+		714377AE1961DC9000A3230E /* FeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTests.m; sourceTree = "<group>"; };
 		714377B81961DC9900A3230E /* FBMutableFeedSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBMutableFeedSource.h; sourceTree = "<group>"; };
 		714377B91961DC9F00A3230E /* FBMutableFeedSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMutableFeedSource.m; sourceTree = "<group>"; };
 		714377BE1961EA7300A3230E /* FBFeedSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedSource.h; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 		7143777D1961DC9000A3230E = {
 			isa = PBXGroup;
 			children = (
-				7143778F1961DC9000A3230E /* FeedSource */,
-				714377A81961DC9000A3230E /* FeedSourceTests */,
+				7143778F1961DC9000A3230E /* Feed */,
+				714377A81961DC9000A3230E /* FeedTests */,
 				714377881961DC9000A3230E /* Frameworks */,
 				714377871961DC9000A3230E /* Products */,
 			);
@@ -119,8 +119,8 @@
 		714377871961DC9000A3230E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				714377861961DC9000A3230E /* FeedSource.app */,
-				714377A11961DC9000A3230E /* FeedSourceTests.xctest */,
+				714377861961DC9000A3230E /* Feed.app */,
+				714377A11961DC9000A3230E /* FeedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7143778F1961DC9000A3230E /* FeedSource */ = {
+		7143778F1961DC9000A3230E /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				714377BE1961EA7300A3230E /* FBFeedSource.h */,
@@ -163,33 +163,33 @@
 				7143779B1961DC9000A3230E /* Images.xcassets */,
 				714377901961DC9000A3230E /* Supporting Files */,
 			);
-			path = FeedSource;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		714377901961DC9000A3230E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				714377911961DC9000A3230E /* FeedSource-Info.plist */,
+				714377911961DC9000A3230E /* Feed-Info.plist */,
 				714377921961DC9000A3230E /* InfoPlist.strings */,
 				714377951961DC9000A3230E /* main.m */,
-				714377971961DC9000A3230E /* FeedSource-Prefix.pch */,
+				714377971961DC9000A3230E /* Feed-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		714377A81961DC9000A3230E /* FeedSourceTests */ = {
+		714377A81961DC9000A3230E /* FeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				714377AE1961DC9000A3230E /* FeedSourceTests.m */,
+				714377AE1961DC9000A3230E /* FeedTests.m */,
 				714377A91961DC9000A3230E /* Supporting Files */,
 			);
-			path = FeedSourceTests;
+			path = FeedTests;
 			sourceTree = "<group>";
 		};
 		714377A91961DC9000A3230E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				714377AA1961DC9000A3230E /* FeedSourceTests-Info.plist */,
+				714377AA1961DC9000A3230E /* FeedTests-Info.plist */,
 				714377AB1961DC9000A3230E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		714377851961DC9000A3230E /* FeedSource */ = {
+		714377851961DC9000A3230E /* Feed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 714377B21961DC9000A3230E /* Build configuration list for PBXNativeTarget "FeedSource" */;
+			buildConfigurationList = 714377B21961DC9000A3230E /* Build configuration list for PBXNativeTarget "Feed" */;
 			buildPhases = (
 				714377821961DC9000A3230E /* Sources */,
 				714377831961DC9000A3230E /* Frameworks */,
@@ -210,14 +210,14 @@
 			);
 			dependencies = (
 			);
-			name = FeedSource;
+			name = Feed;
 			productName = FeedSource;
-			productReference = 714377861961DC9000A3230E /* FeedSource.app */;
+			productReference = 714377861961DC9000A3230E /* Feed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		714377A01961DC9000A3230E /* FeedSourceTests */ = {
+		714377A01961DC9000A3230E /* FeedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 714377B51961DC9000A3230E /* Build configuration list for PBXNativeTarget "FeedSourceTests" */;
+			buildConfigurationList = 714377B51961DC9000A3230E /* Build configuration list for PBXNativeTarget "FeedTests" */;
 			buildPhases = (
 				7143779D1961DC9000A3230E /* Sources */,
 				7143779E1961DC9000A3230E /* Frameworks */,
@@ -228,9 +228,9 @@
 			dependencies = (
 				714377A71961DC9000A3230E /* PBXTargetDependency */,
 			);
-			name = FeedSourceTests;
+			name = FeedTests;
 			productName = FeedSourceTests;
-			productReference = 714377A11961DC9000A3230E /* FeedSourceTests.xctest */;
+			productReference = 714377A11961DC9000A3230E /* FeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -247,7 +247,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 714377811961DC9000A3230E /* Build configuration list for PBXProject "FeedSource" */;
+			buildConfigurationList = 714377811961DC9000A3230E /* Build configuration list for PBXProject "Feed" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -259,8 +259,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				714377851961DC9000A3230E /* FeedSource */,
-				714377A01961DC9000A3230E /* FeedSourceTests */,
+				714377851961DC9000A3230E /* Feed */,
+				714377A01961DC9000A3230E /* FeedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714377AF1961DC9000A3230E /* FeedSourceTests.m in Sources */,
+				714377AF1961DC9000A3230E /* FeedTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +317,7 @@
 /* Begin PBXTargetDependency section */
 		714377A71961DC9000A3230E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 714377851961DC9000A3230E /* FeedSource */;
+			target = 714377851961DC9000A3230E /* Feed */;
 			targetProxy = 714377A61961DC9000A3230E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -418,9 +418,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FeedSource/FeedSource-Prefix.pch";
-				INFOPLIST_FILE = "FeedSource/FeedSource-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Feed/Feed-Prefix.pch";
+				INFOPLIST_FILE = "Feed/Feed-Info.plist";
+				PRODUCT_NAME = Feed;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -431,9 +431,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FeedSource/FeedSource-Prefix.pch";
-				INFOPLIST_FILE = "FeedSource/FeedSource-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Feed/Feed-Prefix.pch";
+				INFOPLIST_FILE = "Feed/Feed-Info.plist";
+				PRODUCT_NAME = Feed;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -441,20 +441,20 @@
 		714377B61961DC9000A3230E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FeedSource.app/FeedSource";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feed.app/Feed";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FeedSource/FeedSource-Prefix.pch";
+				GCC_PREFIX_HEADER = "Feed/Feed-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "FeedSourceTests/FeedSourceTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "FeedTests/FeedTests-Info.plist";
+				PRODUCT_NAME = FeedTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -463,16 +463,16 @@
 		714377B71961DC9000A3230E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FeedSource.app/FeedSource";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feed.app/Feed";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FeedSource/FeedSource-Prefix.pch";
-				INFOPLIST_FILE = "FeedSourceTests/FeedSourceTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Feed/Feed-Prefix.pch";
+				INFOPLIST_FILE = "FeedTests/FeedTests-Info.plist";
+				PRODUCT_NAME = FeedTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -481,7 +481,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		714377811961DC9000A3230E /* Build configuration list for PBXProject "FeedSource" */ = {
+		714377811961DC9000A3230E /* Build configuration list for PBXProject "Feed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				714377B01961DC9000A3230E /* Debug */,
@@ -490,7 +490,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		714377B21961DC9000A3230E /* Build configuration list for PBXNativeTarget "FeedSource" */ = {
+		714377B21961DC9000A3230E /* Build configuration list for PBXNativeTarget "Feed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				714377B31961DC9000A3230E /* Debug */,
@@ -499,7 +499,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		714377B51961DC9000A3230E /* Build configuration list for PBXNativeTarget "FeedSourceTests" */ = {
+		714377B51961DC9000A3230E /* Build configuration list for PBXNativeTarget "FeedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				714377B61961DC9000A3230E /* Debug */,

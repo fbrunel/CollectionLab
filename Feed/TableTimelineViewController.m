@@ -77,7 +77,7 @@
 }
 
 - (void)updateTitle {
-    self.title = [NSString stringWithFormat:@"Tweets (%ld)", self.tweets.count];
+    self.title = [NSString stringWithFormat:@"Tweets (%d)", self.tweets.count];
 }
 
 //

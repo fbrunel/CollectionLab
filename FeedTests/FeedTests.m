@@ -1,6 +1,6 @@
 //
-//  FeedSourceTests.m
-//  FeedSourceTests
+//  FeedTests.m
+//  FeedTests
 //
 //  Created by Fred Brunel on 2014-06-30.
 //  Copyright (c) 2014 FBL. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface FeedSourceTests : XCTestCase
+@interface FeedTests : XCTestCase
 
 @end
 
-@implementation FeedSourceTests
+@implementation FeedTests
 
 - (void)setUp
 {
