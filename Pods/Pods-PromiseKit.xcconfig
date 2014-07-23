@@ -1,0 +1,2 @@
+PODS_PROMISEKIT_GCC_PREPROCESSOR_DEFINITIONS = $(inherited) PMK_ACCOUNTS=1 $(inherited) PMK_FOUNDATION=1 $(inherited) PMK_SOCIAL=1 $(inherited) PMK_UIANIMATION=1 $(inherited) PMK_UIKIT=1 $(inherited) PMK_TIMING=1
+PODS_PROMISEKIT_OTHER_LDFLAGS = -framework Accounts -framework Foundation -framework Social -framework UIKit -weak_framework AssetsLibrary
