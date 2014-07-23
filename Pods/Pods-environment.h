@@ -36,11 +36,23 @@
 #define COCOAPODS_VERSION_MINOR_PromiseKit 9
 #define COCOAPODS_VERSION_PATCH_PromiseKit 13
 
+// PromiseKit/Accounts
+#define COCOAPODS_POD_AVAILABLE_PromiseKit_Accounts
+#define COCOAPODS_VERSION_MAJOR_PromiseKit_Accounts 0
+#define COCOAPODS_VERSION_MINOR_PromiseKit_Accounts 9
+#define COCOAPODS_VERSION_PATCH_PromiseKit_Accounts 13
+
 // PromiseKit/Foundation
 #define COCOAPODS_POD_AVAILABLE_PromiseKit_Foundation
 #define COCOAPODS_VERSION_MAJOR_PromiseKit_Foundation 0
 #define COCOAPODS_VERSION_MINOR_PromiseKit_Foundation 9
 #define COCOAPODS_VERSION_PATCH_PromiseKit_Foundation 13
+
+// PromiseKit/Social
+#define COCOAPODS_POD_AVAILABLE_PromiseKit_Social
+#define COCOAPODS_VERSION_MAJOR_PromiseKit_Social 0
+#define COCOAPODS_VERSION_MINOR_PromiseKit_Social 9
+#define COCOAPODS_VERSION_PATCH_PromiseKit_Social 13
 
 // PromiseKit/UIAnimation
 #define COCOAPODS_POD_AVAILABLE_PromiseKit_UIAnimation

@@ -9,6 +9,7 @@
 #import "TimelineViewController.h"
 #import "TweetCell.h"
 #import "Twitter.h"
+#import "FBFeedSource+Promise.h"
 
 @interface TimelineViewController ()
 
@@ -38,13 +39,14 @@
 }
 
 - (void)fetchNext {
-    TimelineViewController *__weak welf = self;
-    [self.feedSource fetchRange:NSMakeRange(self.page, self.length) completionBlock:^(NSArray *items, NSError *error) {
-        [welf.tweets addObjectsFromArray:items];
-        [welf.collectionView reloadData];
-        [welf updateTitle];
-        welf.page++;
-    }];
+    [self.feedSource promiseFetchRange:NSMakeRange(self.page, self.length)].then(^(NSArray *items) {
+        [self.tweets addObjectsFromArray:items];
+        [self.collectionView reloadData];
+        [self updateTitle];
+        self.page++;
+    }).catch(^(NSError *error) {
+        return;
+    });
 }
 
 - (void)updateTitle {
