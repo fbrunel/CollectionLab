@@ -9,6 +9,7 @@
 #import "TableTimelineViewController.h"
 #import "TableTweetCell.h"
 #import "Twitter.h"
+#import "FBFeedSource+Promise.h"
 
 @interface TableTimelineViewController ()
 @property (strong, nonatomic) Twitter *twitter;
@@ -52,13 +53,20 @@
 }
 
 - (void)fetchNext {
-    TableTimelineViewController *__weak welf = self;
-    [self.feedSource fetchRange:NSMakeRange(self.page, self.length) completionBlock:^(NSArray *items, NSError *error) {
-        [welf.tweets addObjectsFromArray:items];
-        [welf.tableView reloadData];
-        [welf updateTitle];
-        welf.page++;
-    }];
+    [self.feedSource promiseFetchRange:NSMakeRange(self.page, self.length)].then(^(NSArray *items) {
+        [self.tweets addObjectsFromArray:items];
+        [self.tableView reloadData];
+        [self updateTitle];
+        self.page++;
+    }).catch(^(NSError *error) {
+        return;
+    });
+//    [self.feedSource fetchRange:NSMakeRange(self.page, self.length) completionBlock:^(NSArray *items, NSError *error) {
+//        [welf.tweets addObjectsFromArray:items];
+//        [welf.tableView reloadData];
+//        [welf updateTitle];
+//        welf.page++;
+//    }];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
