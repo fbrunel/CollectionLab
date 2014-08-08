@@ -18,56 +18,7 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TweetCell" id="2J9-fg-STN" customClass="TweetCell">
-                                <rect key="frame" x="0.0" y="64" width="320" height="88"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="lBE-Jz-DZf">
-                                            <rect key="frame" x="10" y="10" width="300" height="48"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znn-w7-QQV">
-                                            <rect key="frame" x="10" y="58" width="64" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G13-3h-JHP">
-                                            <rect key="frame" x="281" y="58" width="29" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="G13-3h-JHP" secondAttribute="bottom" constant="10" id="Dqa-CM-pLx"/>
-                                    <constraint firstAttribute="bottom" secondItem="znn-w7-QQV" secondAttribute="bottom" constant="10" id="E1w-yB-S98"/>
-                                    <constraint firstItem="lBE-Jz-DZf" firstAttribute="top" secondItem="2J9-fg-STN" secondAttribute="top" constant="10" id="JGk-bj-BQq"/>
-                                    <constraint firstAttribute="trailing" secondItem="lBE-Jz-DZf" secondAttribute="trailing" constant="10" id="R7s-UK-7Rp"/>
-                                    <constraint firstAttribute="bottom" secondItem="lBE-Jz-DZf" secondAttribute="bottom" constant="30" id="WDV-Zb-0cP"/>
-                                    <constraint firstAttribute="trailing" secondItem="G13-3h-JHP" secondAttribute="trailing" constant="10" id="Wce-L7-lpO"/>
-                                    <constraint firstItem="znn-w7-QQV" firstAttribute="leading" secondItem="2J9-fg-STN" secondAttribute="leading" constant="10" id="Wkm-Sn-ogf"/>
-                                    <constraint firstItem="lBE-Jz-DZf" firstAttribute="leading" secondItem="2J9-fg-STN" secondAttribute="leading" constant="10" id="djb-NY-xgR"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dateLabel" destination="G13-3h-JHP" id="gnn-Vw-eHw"/>
-                                    <outlet property="textLabel" destination="lBE-Jz-DZf" id="jcZ-nk-Ofh"/>
-                                    <outlet property="usernameLabel" destination="znn-w7-QQV" id="iEb-lz-q6T"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="jjj-F3-TUj" id="xMI-e9-ir4"/>
                             <outlet property="delegate" destination="jjj-F3-TUj" id="U9o-ob-5ro"/>
