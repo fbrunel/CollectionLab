@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSURL *profileImageURL;
 @property (strong, nonatomic) NSDate *date;
 @property (strong, nonatomic) NSString *dateRepresentation;
 

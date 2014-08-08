@@ -36,6 +36,10 @@
     return [NSString stringWithFormat:@"@%@", [self.JSONObject valueForKeyPath:@"user.screen_name"]];
 }
 
+- (NSURL *)profileImageURL {
+    return [NSURL URLWithString:[self.JSONObject valueForKeyPath:@"user.profile_image_url"]];
+}
+
 - (NSDate *)date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];

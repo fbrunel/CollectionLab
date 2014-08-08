@@ -11,7 +11,15 @@
 @implementation TweetCell
 
 - (void)awakeFromNib {
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.profileImageView.layer.borderWidth = 0.5f;
     return;
+}
+
+- (void)prepareForReuse {
+    [self.profileImageView cancelImageRequestOperation];
 }
 
 @end

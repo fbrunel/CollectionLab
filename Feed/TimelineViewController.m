@@ -67,6 +67,15 @@
 - (TweetCell *)configureCell:(TweetCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     Tweet *tweet = self.tweets[indexPath.item];
     cell.textLabel.text = tweet.text;
+    cell.usernameLabel.text = tweet.userName;
+    cell.dateLabel.text = [tweet dateRepresentation];
+    
+    // FIXME: this is not ideal, I would have preferred another method to triger the image
+    // loading without introducing a dependency on the type of cell being configured.
+    if (cell != self.prototypeCell) {
+        [cell.profileImageView setImageWithURL:tweet.profileImageURL];
+    }
+    
     return cell;
 }
 
@@ -86,6 +95,10 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [[self configureCell:self.prototypeCell forItemAtIndexPath:indexPath] systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    return;
 }
 
 //
