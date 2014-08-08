@@ -20,6 +20,7 @@
 
 - (void)prepareForReuse {
     [self.profileImageView cancelImageRequestOperation];
+    [self.profileImageView setImage:nil];
 }
 
 @end
