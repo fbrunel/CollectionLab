@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7101D5F3197F70EB0048492D /* FBFeedSource+Promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7101D5F2197F70EB0048492D /* FBFeedSource+Promise.m */; };
 		7103E201197760E90022609F /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E200197760E90022609F /* TimelineViewController.m */; };
-		7103E204197762F10022609F /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7103E203197762F10022609F /* TweetCell.m */; };
 		7139435519620EAD00668B4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7139435419620EAD00668B4D /* Main.storyboard */; };
 		713943591962100400668B4D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713943581962100400668B4D /* Social.framework */; };
 		7139435B196210BF00668B4D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7139435A196210BF00668B4D /* Accounts.framework */; };
@@ -29,6 +28,8 @@
 		714377AD1961DC9000A3230E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 714377AB1961DC9000A3230E /* InfoPlist.strings */; };
 		714377AF1961DC9000A3230E /* FeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377AE1961DC9000A3230E /* FeedTests.m */; };
 		714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 714377B91961DC9F00A3230E /* FBMutableFeedSource.m */; };
+		715663A11994764A003C85DB /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 715663A01994764A003C85DB /* TweetCell.m */; };
+		715663A319947D02003C85DB /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715663A219947D02003C85DB /* TweetCell.xib */; };
 		A1475EA538FA47689F92055C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F506FCE41D4A6A883381AC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +48,6 @@
 		7101D5F2197F70EB0048492D /* FBFeedSource+Promise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBFeedSource+Promise.m"; sourceTree = "<group>"; };
 		7103E1FF197760E90022609F /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		7103E200197760E90022609F /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
-		7103E202197762F10022609F /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
-		7103E203197762F10022609F /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		7139435419620EAD00668B4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		713943581962100400668B4D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7139435A196210BF00668B4D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -76,6 +75,9 @@
 		714377B81961DC9900A3230E /* FBMutableFeedSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBMutableFeedSource.h; sourceTree = "<group>"; };
 		714377B91961DC9F00A3230E /* FBMutableFeedSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMutableFeedSource.m; sourceTree = "<group>"; };
 		714377BE1961EA7300A3230E /* FBFeedSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedSource.h; sourceTree = "<group>"; };
+		7156639F1994764A003C85DB /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		715663A01994764A003C85DB /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		715663A219947D02003C85DB /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 		8651432ABDBF41D9AB605D93 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A2F506FCE41D4A6A883381AC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,8 +158,9 @@
 				7139435F196272BE00668B4D /* Twitter.m */,
 				7103E1FF197760E90022609F /* TimelineViewController.h */,
 				7103E200197760E90022609F /* TimelineViewController.m */,
-				7103E202197762F10022609F /* TweetCell.h */,
-				7103E203197762F10022609F /* TweetCell.m */,
+				7156639F1994764A003C85DB /* TweetCell.h */,
+				715663A01994764A003C85DB /* TweetCell.m */,
+				715663A219947D02003C85DB /* TweetCell.xib */,
 				714377981961DC9000A3230E /* AppDelegate.h */,
 				714377991961DC9000A3230E /* AppDelegate.m */,
 				7139435419620EAD00668B4D /* Main.storyboard */,
@@ -275,6 +278,7 @@
 			files = (
 				7139435519620EAD00668B4D /* Main.storyboard in Resources */,
 				714377941961DC9000A3230E /* InfoPlist.strings in Resources */,
+				715663A319947D02003C85DB /* TweetCell.xib in Resources */,
 				7143779C1961DC9000A3230E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,9 +335,9 @@
 				71394363196276D000668B4D /* NSArray+Map.m in Sources */,
 				714377BA1961DC9F00A3230E /* FBMutableFeedSource.m in Sources */,
 				7103E201197760E90022609F /* TimelineViewController.m in Sources */,
-				7103E204197762F10022609F /* TweetCell.m in Sources */,
 				714377961961DC9000A3230E /* main.m in Sources */,
 				71394360196272BE00668B4D /* Twitter.m in Sources */,
+				715663A11994764A003C85DB /* TweetCell.m in Sources */,
 				7139435D1962273B00668B4D /* FBFeedSource.m in Sources */,
 				7101D5F3197F70EB0048492D /* FBFeedSource+Promise.m in Sources */,
 			);

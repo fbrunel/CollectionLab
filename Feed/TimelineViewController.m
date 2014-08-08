@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableArray *tweets;
 @property (assign, nonatomic) NSUInteger page;
 @property (assign, nonatomic) NSUInteger length;
+@property (strong, nonatomic) TweetCell *prototypeCell;
 
 @end
 
@@ -27,6 +28,14 @@
     self.tweets = [NSMutableArray array];
     self.page = 1;
     self.length = 20;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UINib *cellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
+    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"TweetCell"];
+    self.prototypeCell = [[cellNib instantiateWithOwner:nil options:nil] objectAtIndex:0];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -50,7 +59,15 @@
 }
 
 - (void)updateTitle {
-    self.title = [NSString stringWithFormat:@"Tweets (%d)", self.tweets.count];
+    self.title = [NSString stringWithFormat:@"Tweets (%@)", @(self.tweets.count)];
+}
+
+//
+
+- (TweetCell *)configureCell:(TweetCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    Tweet *tweet = self.tweets[indexPath.item];
+    cell.textLabel.text = tweet.text;
+    return cell;
 }
 
 //
@@ -60,19 +77,18 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.row > self.tweets.count - 5)
         [self fetchNext];
     
     TweetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TweetCell" forIndexPath:indexPath];
-    Tweet *tweet = self.tweets[indexPath.item];
-    
-    cell.textLabel.text = tweet.text;
-    cell.usernameLabel.text = tweet.userName;
-    cell.dateLabel.text = tweet.dateRepresentation;
-    
-    return cell;
+    return [self configureCell:cell forItemAtIndexPath:indexPath];
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self configureCell:self.prototypeCell forItemAtIndexPath:indexPath] systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+}
+
+//
 
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
@@ -83,5 +99,6 @@
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
 }
+
 
 @end
