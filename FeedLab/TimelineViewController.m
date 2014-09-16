@@ -119,6 +119,8 @@
 
 - (void)willTransitionToTraitCollection:(UITraitCollection *)newTraitCollection
               withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super willTransitionToTraitCollection:newTraitCollection withTransitionCoordinator:coordinator];
+    
     if (newTraitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
         self.prototypeCell.textLabel.preferredMaxLayoutWidth = 548.0f;
         self.prototypeCell.textLabelWidthConstraint.constant = 548.0f;
