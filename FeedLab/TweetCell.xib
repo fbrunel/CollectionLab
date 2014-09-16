@@ -67,9 +67,10 @@
                 <outlet property="dateLabel" destination="suN-y4-r4e" id="Jq2-1C-zFE"/>
                 <outlet property="profileImageView" destination="MJp-Lv-Fjx" id="uAU-B8-75P"/>
                 <outlet property="textLabel" destination="TrR-OJ-EAB" id="gsx-RY-9xZ"/>
+                <outlet property="textLabelWidthConstraint" destination="w8s-2x-H9Y" id="pQY-3r-uio"/>
                 <outlet property="usernameLabel" destination="aFA-nv-hSB" id="1jV-2v-4Ko"/>
             </connections>
-            <point key="canvasLocation" x="-188" y="-659"/>
+            <point key="canvasLocation" x="-655" y="-1679"/>
         </collectionViewCell>
     </objects>
 </document>

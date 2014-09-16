@@ -32,7 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     UINib *cellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"TweetCell"];
     self.prototypeCell = [[cellNib instantiateWithOwner:nil options:nil] objectAtIndex:0];
@@ -94,7 +93,10 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [[self configureCell:self.prototypeCell forItemAtIndexPath:indexPath] systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    [self configureCell:self.prototypeCell forItemAtIndexPath:indexPath];
+    [self.prototypeCell setNeedsUpdateConstraints];
+    [self.prototypeCell setNeedsLayout];
+    return [self.prototypeCell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,5 +115,18 @@
     cell.backgroundColor = [UIColor whiteColor];
 }
 
+// FIXME: decouple the controller to the cell constraints changes
+
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newTraitCollection
+              withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    if (newTraitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+        self.prototypeCell.textLabel.preferredMaxLayoutWidth = 548.0f;
+        self.prototypeCell.textLabelWidthConstraint.constant = 548.0f;
+    } else {
+        self.prototypeCell.textLabel.preferredMaxLayoutWidth = 300.0f;
+        self.prototypeCell.textLabelWidthConstraint.constant = 300.0f;
+    }
+    [self.collectionViewLayout invalidateLayout];
+}
 
 @end
