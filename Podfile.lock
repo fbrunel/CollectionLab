@@ -20,17 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - ChuzzleKit (1.0.4)
-  - OMGHTTPURLRQ (1.1.4):
-    - ChuzzleKit
+  - ChuzzleKit (1.0.6)
+  - OMGHTTPURLRQ (2.0.1):
     - OMGHTTPURLRQ/RQ
     - OMGHTTPURLRQ/UserAgent
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/RQ (1.1.4):
-    - ChuzzleKit
+  - OMGHTTPURLRQ/RQ (2.0.1):
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (1.1.4):
-    - ChuzzleKit
+  - OMGHTTPURLRQ/UserAgent (2.0.1):
     - OMGHTTPURLRQ/UserAgent
   - PromiseKit (0.9.13):
     - PromiseKit/defaults
@@ -67,8 +64,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  ChuzzleKit: b47a96cb59dfb0b972cd539b8cc1e66c97b20f42
-  OMGHTTPURLRQ: ca928b53ae60cb4cc078d8f7201f4f647f435351
+  ChuzzleKit: baeaabc3f09edbc56bbf776993afe7953286116f
+  OMGHTTPURLRQ: 4297af2a7f7ca7adb3f8331203001e0fd2dae16f
   PromiseKit: b640456089cc366a69cdcd690f7fe5f757184c92
 
 COCOAPODS: 0.33.1

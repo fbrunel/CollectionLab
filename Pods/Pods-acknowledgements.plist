@@ -41,7 +41,15 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>This text or CocoaPods throws a fit</string>
+			<string>This text to make CocoaPods happy.</string>
+			<key>Title</key>
+			<string>ChuzzleKit</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>See README.markdown for full license text.</string>
 			<key>Title</key>
 			<string>OMGHTTPURLRQ</string>
 			<key>Type</key>

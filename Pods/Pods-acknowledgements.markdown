@@ -24,9 +24,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## ChuzzleKit
+
+This text to make CocoaPods happy.
+
 ## OMGHTTPURLRQ
 
-This text or CocoaPods throws a fit
+See README.markdown for full license text.
 
 ## PromiseKit
 
