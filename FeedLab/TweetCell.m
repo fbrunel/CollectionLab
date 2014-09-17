@@ -8,6 +8,12 @@
 
 #import "TweetCell.h"
 
+@interface TweetCell ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textLabelWidthConstraint;
+@end
+
+//
+
 @implementation TweetCell
 
 - (void)awakeFromNib {
@@ -21,6 +27,11 @@
 - (void)prepareForReuse {
     [self.profileImageView cancelImageRequestOperation];
     [self.profileImageView setImage:nil];
+}
+
+- (void)updateConstraintsForSize:(CGSize)size {
+    self.textLabel.preferredMaxLayoutWidth = size.width - 20.0f;
+    self.textLabelWidthConstraint.constant = size.width - 20.0f;
 }
 
 @end

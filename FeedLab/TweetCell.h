@@ -11,9 +11,10 @@
 @interface TweetCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textLabelWidthConstraint;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+- (void)updateConstraintsForSize:(CGSize)size;
 
 @end

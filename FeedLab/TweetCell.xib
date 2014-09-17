@@ -70,7 +70,7 @@
                 <outlet property="textLabelWidthConstraint" destination="w8s-2x-H9Y" id="pQY-3r-uio"/>
                 <outlet property="usernameLabel" destination="aFA-nv-hSB" id="1jV-2v-4Ko"/>
             </connections>
-            <point key="canvasLocation" x="-655" y="-1679"/>
+            <point key="canvasLocation" x="-1633" y="-2271"/>
         </collectionViewCell>
     </objects>
 </document>
