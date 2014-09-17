@@ -61,7 +61,6 @@
 
 - (FBFeedSource *)sourceForHomeTimeline {
     FBMutableFeedSource *feedSource = [FBMutableFeedSource feedSource]; // FIXME: use a init with a fetch block as param
-
     
     FBMutableFeedSource *__weak feedSourceRef = feedSource;
     feedSource.fetchBlock = (id)^(NSRange range) { // FIXME: use blocks for failure/completion like in PromiseKit
@@ -101,7 +100,6 @@
 - (FBFeedSource *)sourceForHomeTimeline2 {
     FBMutableFeedSource *feedSource = [FBMutableFeedSource feedSource];
 
-    
     FBMutableFeedSource *__weak feedSourceRef = feedSource; // breaks the retain cycle between the feedSource and the fetchBlock
     feedSource.fetchBlock = (id)^(NSRange range) {
 
