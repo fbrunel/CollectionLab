@@ -1,6 +1,5 @@
 //
 //  TimelineViewController.m
-//  FeedSource
 //
 //  Created by Fred Brunel on 2014-07-16.
 //  Copyright (c) 2014 FBL. All rights reserved.
@@ -9,12 +8,12 @@
 #import "TimelineViewController.h"
 #import "TweetCell.h"
 #import "Twitter.h"
-#import "FBFeedSource+Promise.h"
+#import "FBDataSource+Promise.h"
 
 @interface TimelineViewController ()
 
 @property (strong, nonatomic) Twitter *twitter;
-@property (strong, nonatomic) FBFeedSource *feedSource;
+@property (strong, nonatomic) FBDataSource *tweetsDataSource;
 @property (strong, nonatomic) NSMutableArray *tweets;
 @property (assign, nonatomic) NSUInteger page;
 @property (assign, nonatomic) NSUInteger length;
@@ -43,13 +42,13 @@
     [super viewDidAppear:animated];
     
     self.twitter = [[Twitter alloc] init];
-    self.feedSource = [self.twitter sourceForHomeTimeline];
+    self.tweetsDataSource = [self.twitter dataSourceForHomeTimeline];
     
     [self fetchNext];
 }
 
 - (void)fetchNext {
-    [self.feedSource promiseFetchRange:NSMakeRange(self.page, self.length)].then(^(NSArray *items) {
+    [self.tweetsDataSource promiseFetchRange:NSMakeRange(self.page, self.length)].then(^(NSArray *items) {
         [self.tweets addObjectsFromArray:items];
         [self.collectionView reloadData];
         [self updateTitle];

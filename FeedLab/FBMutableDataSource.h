@@ -1,20 +1,20 @@
 //
-//  FBMutableFeedSource.h
+//  FBMutableDataSource.h
 //
 //  Created by Fred Brunel on 2014-06-30.
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
-#import "FBFeedSource.h"
+#import "FBDataSource.h"
 
-@class FBMutableFeedSource;
+@class FBMutableDataSource;
 
-typedef id   (^CKFeedSourceFetchBlock)(NSRange range);
-typedef void (^CKFeedSourceCancelBlock)(id fetchObject);
+typedef id   (^FBDataSourceFetchBlock)(NSRange range);
+typedef void (^FBDataSourceCancelBlock)(id fetchObject);
 
 /**
  */
-@interface FBMutableFeedSource : FBFeedSource
+@interface FBMutableDataSource : FBDataSource
 
 ///-----------------------------------
 /// @name Creating a feed source object
@@ -30,15 +30,15 @@ typedef void (^CKFeedSourceCancelBlock)(id fetchObject);
 
 /**
  */
-@property (nonatomic, copy) CKFeedSourceFetchBlock fetchBlock;
+@property (nonatomic, copy) FBDataSourceFetchBlock fetchBlock;
 
 /**
  */
-@property (nonatomic, copy) CKFeedSourceCancelBlock cancelBlock;
+@property (nonatomic, copy) FBDataSourceCancelBlock cancelBlock;
 
 /**
  */
-- (BOOL)fetchRange:(NSRange)range completionBlock:(CKFeedSourceFetchCompletionBlock)completionBlock;
+- (BOOL)fetchRange:(NSRange)range completionBlock:(FBDataSourceFetchCompletionBlock)completionBlock;
 
 /**
  */

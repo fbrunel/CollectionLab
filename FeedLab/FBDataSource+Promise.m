@@ -1,14 +1,13 @@
 //
-//  FBFeedSource+Promise.m
-//  Feed
+//  FBDataSource+Promise.m
 //
 //  Created by Fred Brunel on 2014-07-23.
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
-#import "FBFeedSource+Promise.h"
+#import "FBDataSource+Promise.h"
 
-@implementation FBFeedSource (Promise)
+@implementation FBDataSource (Promise)
 
 - (PMKPromise *)promiseFetchRange:(NSRange)range {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {

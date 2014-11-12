@@ -1,26 +1,26 @@
 //
-//  FBMutableFeedSource.m
+//  FBMutableDataSource.m
 //
 //  Created by Fred Brunel on 2014-06-30.
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
-#import "FBMutableFeedSource.h"
+#import "FBMutableDataSource.h"
 
-@interface FBMutableFeedSource ()
+@interface FBMutableDataSource ()
 
 @property (nonatomic, readwrite, assign) BOOL hasMore;
 @property (nonatomic, readwrite, assign) BOOL isFetching;
 
 @property (nonatomic, assign) NSRange fetchRange;
 @property (nonatomic, strong) id fetchObject;
-@property (nonatomic, copy) CKFeedSourceFetchCompletionBlock completionBlock;
+@property (nonatomic, copy) FBDataSourceFetchCompletionBlock completionBlock;
 
 @end
 
 //
 
-@implementation FBMutableFeedSource
+@implementation FBMutableDataSource
 
 @synthesize hasMore = _hasMore;
 @synthesize isFetching = _isFetching;
@@ -46,7 +46,7 @@
 
 #pragma mark Public API
 
-- (BOOL)fetchRange:(NSRange)range completionBlock:(CKFeedSourceFetchCompletionBlock)completionBlock {
+- (BOOL)fetchRange:(NSRange)range completionBlock:(FBDataSourceFetchCompletionBlock)completionBlock {
     if (self.isFetching == YES || self.hasMore == NO)
         return NO;
     

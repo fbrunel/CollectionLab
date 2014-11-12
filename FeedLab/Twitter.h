@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
-#import "FBFeedSource.h"
+#import "FBDataSource.h"
 
 @interface Tweet : NSObject
 
@@ -24,6 +24,6 @@
 
 @interface Twitter : NSObject
 
-- (FBFeedSource *)sourceForHomeTimeline;
+- (FBDataSource *)dataSourceForHomeTimeline;
 
 @end

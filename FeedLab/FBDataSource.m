@@ -1,18 +1,18 @@
 //
-//  FBFeedSource.m
+//  FBDataSource.m
 //
 //  Created by Fred Brunel on 2014-06-30.
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
-#import "FBFeedSource.h"
+#import "FBDataSource.h"
 
-@implementation FBFeedSource
+@implementation FBDataSource
 
 @synthesize hasMore = _hasMore;
 @synthesize isFetching = _isFetching;
 
-- (BOOL)fetchRange:(NSRange)range completionBlock:(CKFeedSourceFetchCompletionBlock)completionBlock {
+- (BOOL)fetchRange:(NSRange)range completionBlock:(FBDataSourceFetchCompletionBlock)completionBlock {
     return NO;
 }
 

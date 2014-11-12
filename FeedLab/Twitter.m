@@ -7,7 +7,7 @@
 //
 
 #import "Twitter.h"
-#import "FBMutableFeedSource.h"
+#import "FBMutableDataSource.h"
 #import "NSArray+Map.h"
 
 #import <Accounts/Accounts.h>
@@ -59,11 +59,11 @@
 
 @implementation Twitter
 
-- (FBFeedSource *)sourceForHomeTimeline {
-    FBMutableFeedSource *feedSource = [FBMutableFeedSource feedSource]; // FIXME: use a init with a fetch block as param
+- (FBDataSource *)dataSourceForHomeTimeline {
+    FBMutableDataSource *source = [FBMutableDataSource feedSource]; // FIXME: use a init with a fetch block as param
     
-    FBMutableFeedSource *__weak feedSourceRef = feedSource;
-    feedSource.fetchBlock = (id)^(NSRange range) { // FIXME: use blocks for failure/completion like in PromiseKit
+    FBMutableDataSource *__weak sourceRef = source;
+    source.fetchBlock = (id)^(NSRange range) { // FIXME: use blocks for failure/completion like in PromiseKit
 
         ACAccountStore *store = [[ACAccountStore alloc] init];
         ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -79,7 +79,7 @@
             if (httpResponse.statusCode >= 400) {
                 NSDictionary *twitterErrorInfo = (NSDictionary *)responseObject;
                 NSError *twitterError = [NSError errorWithDomain:@"TwitterErrorDomain" code:httpResponse.statusCode userInfo:twitterErrorInfo];
-                [feedSourceRef completeFetchWithError:twitterError];
+                [sourceRef completeFetchWithError:twitterError];
                 return;
             }
             
@@ -88,20 +88,20 @@
                 return [[Tweet alloc] initWithJSONObject:object];
             }];
             
-            [feedSourceRef completeFetchWithItems:tweets];
+            [sourceRef completeFetchWithItems:tweets];
         }).catch(^(NSError *error) {
-            [feedSourceRef completeFetchWithError:error];
+            [sourceRef completeFetchWithError:error];
         });
     };
     
-    return feedSource;
+    return source;
 }
 
-- (FBFeedSource *)sourceForHomeTimeline2 {
-    FBMutableFeedSource *feedSource = [FBMutableFeedSource feedSource];
+- (FBDataSource *)dataSourceForHomeTimeline2 {
+    FBMutableDataSource *source = [FBMutableDataSource feedSource];
 
-    FBMutableFeedSource *__weak feedSourceRef = feedSource; // breaks the retain cycle between the feedSource and the fetchBlock
-    feedSource.fetchBlock = (id)^(NSRange range) {
+    FBMutableDataSource *__weak sourceRef = source; // breaks the retain cycle between the feedSource and the fetchBlock
+    source.fetchBlock = (id)^(NSRange range) {
 
         ACAccountStore *store = [[ACAccountStore alloc] init];
         ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -123,14 +123,14 @@
                 id responseObject = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
                 
                 if (error) {
-                    [feedSourceRef completeFetchWithError:error];
+                    [sourceRef completeFetchWithError:error];
                     return;
                 }
                 
                 if (httpResponse.statusCode >= 400) {
                     NSDictionary *twitterErrorInfo = (NSDictionary *)responseObject;
                     NSError *twitterError = [NSError errorWithDomain:@"TwitterErrorDomain" code:httpResponse.statusCode userInfo:twitterErrorInfo];
-                    [feedSourceRef completeFetchWithError:twitterError];
+                    [sourceRef completeFetchWithError:twitterError];
                     return;
                 }
                 
@@ -139,12 +139,12 @@
                     return [[Tweet alloc] initWithJSONObject:object];
                 }];
                 
-                [feedSourceRef completeFetchWithItems:tweets];
+                [sourceRef completeFetchWithItems:tweets];
             }];
         }];
     };
     
-    return feedSource;
+    return source;
 }
 
 @end
