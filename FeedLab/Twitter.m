@@ -36,7 +36,7 @@
 }
 
 - (NSURL *)profileImageURL {
-    return [NSURL URLWithString:[self.JSONObject valueForKeyPath:@"user.profile_image_url"]];
+    return [NSURL URLWithString:[self.JSONObject valueForKeyPath:@"user.profile_image_url_https"]];
 }
 
 - (NSDate *)date {
