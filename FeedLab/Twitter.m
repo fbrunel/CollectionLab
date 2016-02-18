@@ -91,6 +91,8 @@
         }).catch(^(NSError *error) {
             [sourceRef completeFetchWithError:error];
         });
+        
+        return nil;
     };
     
     return source;
@@ -141,6 +143,8 @@
                 [sourceRef completeFetchWithItems:tweets];
             }];
         }];
+        
+        return nil;
     };
     
     return source;
