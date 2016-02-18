@@ -79,6 +79,10 @@
     return cell;
 }
 
+- (void)cleanupCell:(TweetCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    return;
+}
+
 //
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -88,9 +92,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row > self.tweets.count - 5)
         [self fetchNext];
-    
-    TweetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TweetCell" forIndexPath:indexPath];
-    return [self configureCell:cell forItemAtIndexPath:indexPath];
+    return [collectionView dequeueReusableCellWithReuseIdentifier:@"TweetCell" forIndexPath:indexPath];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,8 +102,16 @@
     return [self.prototypeCell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    return;
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self configureCell:(TweetCell *)cell forItemAtIndexPath:indexPath];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView
+  didEndDisplayingCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self cleanupCell:(TweetCell *)cell forItemAtIndexPath:indexPath];
 }
 
 //
