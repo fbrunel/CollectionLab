@@ -245,7 +245,7 @@
 		7143777E1961DC9000A3230E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = FBL;
 				TargetAttributes = {
 					714377A01961DC9000A3230E = {
@@ -399,6 +399,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -413,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -445,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -460,6 +461,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedLab/FeedLab-Prefix.pch";
 				INFOPLIST_FILE = "FeedLab/FeedLab-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fredbrunel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FeedLab;
 				WRAPPER_EXTENSION = app;
 			};
@@ -474,6 +476,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedLab/FeedLab-Prefix.pch";
 				INFOPLIST_FILE = "FeedLab/FeedLab-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fredbrunel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FeedLab;
 				WRAPPER_EXTENSION = app;
 			};
@@ -495,6 +498,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "FeedLabTests/FeedLabTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fredbrunel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FeedLabTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -513,6 +517,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedLab/FeedLab-Prefix.pch";
 				INFOPLIST_FILE = "FeedLabTests/FeedLabTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fredbrunel.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FeedLabTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
