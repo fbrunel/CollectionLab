@@ -24,7 +24,7 @@
 }
 
 - (void)prepareForReuse {
-    [self.profileImageView cancelImageRequestOperation];
+    [self.profileImageView cancelImageDownloadTask];
     [self.profileImageView setImage:nil];
 }
 

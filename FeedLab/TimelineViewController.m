@@ -8,7 +8,6 @@
 #import "TimelineViewController.h"
 #import "TweetCell.h"
 #import "Twitter.h"
-#import "FBDataSource+Promise.h"
 
 @interface TimelineViewController ()
 
@@ -48,14 +47,12 @@
 }
 
 - (void)fetchNext {
-    [self.tweetsDataSource promiseFetchRange:NSMakeRange(self.page, self.length)].then(^(NSArray *items) {
+    [self.tweetsDataSource fetchRange:NSMakeRange(self.page, self.length) completionBlock:^(NSArray *items, NSError *error) {
         [self.tweets addObjectsFromArray:items];
         [self.collectionView reloadData];
         [self updateTitle];
         self.page++;
-    }).catch(^(NSError *error) {
-        return;
-    });
+    }];
 }
 
 - (void)updateTitle {

@@ -12,8 +12,6 @@
 #import <Accounts/Accounts.h>
 #import <Twitter/Twitter.h>
 
-#import "PromiseKit.h"
-
 @interface Tweet ()
 @property (strong, nonatomic) NSDictionary *JSONObject;
 @end
@@ -59,46 +57,6 @@
 @implementation Twitter
 
 - (FBDataSource *)dataSourceForHomeTimeline {
-    FBMutableDataSource *source = [FBMutableDataSource feedSource]; // FIXME: use a init with a fetch block as param
-    
-    FBMutableDataSource *__weak sourceRef = source;
-    source.fetchBlock = (id)^(NSRange range) { // FIXME: use blocks for failure/completion like in PromiseKit
-
-        ACAccountStore *store = [[ACAccountStore alloc] init];
-        ACAccountType *twitterAccountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-        
-        [store promiseForAccountsWithType:twitterAccountType options:nil].then(^(BOOL granted) {
-            NSURL *URL = [NSURL URLWithString:@"https://api.twitter.com/1/statuses/home_timeline.json"];
-            NSDictionary *params = @{ @"page": @(range.location).stringValue, @"count" : @(range.length).stringValue };
-            SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:URL parameters:params];
-            ACAccount *twitterAccount = [[store accountsWithAccountType:twitterAccountType] firstObject];
-            request.account = twitterAccount;
-            return [request promise];
-        }).then(^(id responseObject, NSHTTPURLResponse *httpResponse) {
-            if (httpResponse.statusCode >= 400) {
-                NSDictionary *twitterErrorInfo = (NSDictionary *)responseObject;
-                NSError *twitterError = [NSError errorWithDomain:@"TwitterErrorDomain" code:httpResponse.statusCode userInfo:twitterErrorInfo];
-                [sourceRef completeFetchWithError:twitterError];
-                return;
-            }
-            
-            NSArray *items = (NSArray *)responseObject;
-            NSArray *tweets = [items mapObjectsUsingBlock:^id(id object, NSUInteger index) {
-                return [[Tweet alloc] initWithJSONObject:object];
-            }];
-            
-            [sourceRef completeFetchWithItems:tweets];
-        }).catch(^(NSError *error) {
-            [sourceRef completeFetchWithError:error];
-        });
-        
-        return nil;
-    };
-    
-    return source;
-}
-
-- (FBDataSource *)dataSourceForHomeTimeline2 {
     FBMutableDataSource *source = [FBMutableDataSource feedSource];
 
     FBMutableDataSource *__weak sourceRef = source; // breaks the retain cycle between the feedSource and the fetchBlock

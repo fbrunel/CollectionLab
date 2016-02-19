@@ -1,1 +1,0 @@
-../../PromiseKit/objc/PromiseKit+UIKit.h
