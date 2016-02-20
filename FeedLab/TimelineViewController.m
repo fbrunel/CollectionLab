@@ -35,7 +35,6 @@
     UINib *cellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"TweetCell"];
     self.prototypeCell = [[cellNib instantiateWithOwner:nil options:nil] objectAtIndex:0];
-    //[self.prototypeCell updateConstraintsForSize:self.view.bounds.size];
     return;
 }
 
