@@ -33,7 +33,7 @@
     UINib *cellNib = [UINib nibWithNibName:@"TweetCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"TweetCell"];
     self.prototypeCell = [[cellNib instantiateWithOwner:nil options:nil] objectAtIndex:0];
-    [self.prototypeCell updateConstraintsForSize:self.view.bounds.size];
+    //[self.prototypeCell updateConstraintsForSize:self.view.bounds.size];
     return;
 }
 
@@ -73,6 +73,8 @@
         [cell.profileImageView setImageWithURL:tweet.profileImageURL];
     }
     
+    [cell updateConstraintsForSize:self.view.bounds.size]; // Change constraint
+    
     return cell;
 }
 
@@ -89,7 +91,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row > self.tweets.count - 5)
         [self fetchNext];
-    return [collectionView dequeueReusableCellWithReuseIdentifier:@"TweetCell" forIndexPath:indexPath];
+    
+    TweetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TweetCell" forIndexPath:indexPath];
+    [self configureCell:(TweetCell *)cell forItemAtIndexPath:indexPath];
+    [cell updateConstraintsIfNeeded];
+    return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,7 +108,7 @@
 - (void)collectionView:(UICollectionView *)collectionView
        willDisplayCell:(UICollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self configureCell:(TweetCell *)cell forItemAtIndexPath:indexPath];
+    return;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView
@@ -127,7 +133,6 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size
        withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [self.prototypeCell updateConstraintsForSize:size];
     [self.collectionViewLayout invalidateLayout];
 }
 
