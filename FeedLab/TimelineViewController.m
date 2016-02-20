@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *tweets;
 @property (assign, nonatomic) NSUInteger page;
 @property (assign, nonatomic) NSUInteger length;
+@property (assign, nonatomic) NSUInteger cellWidth;
 @property (strong, nonatomic) TweetCell *prototypeCell;
 
 @end
@@ -26,6 +27,7 @@
     self.tweets = [NSMutableArray array];
     self.page = 1;
     self.length = 20;
+    self.cellWidth = 0;
 }
 
 - (void)viewDidLoad {
@@ -73,7 +75,12 @@
         [cell.profileImageView setImageWithURL:tweet.profileImageURL];
     }
     
-    [cell updateConstraintsForSize:self.view.bounds.size]; // Change constraint
+    // FIXME: Find a way to do that better
+    if (self.cellWidth == 0) {
+        [cell updateConstraintsForWidth:self.view.bounds.size.width];
+    } else {
+        [cell updateConstraintsForWidth:self.cellWidth];
+    }
     
     return cell;
 }
@@ -134,6 +141,23 @@
 - (void)viewWillTransitionToSize:(CGSize)size
        withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [self.collectionViewLayout invalidateLayout];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    UIUserInterfaceSizeClass hc = self.traitCollection.horizontalSizeClass;
+    UIUserInterfaceSizeClass vc = self.traitCollection.verticalSizeClass;
+    
+    if (hc == UIUserInterfaceSizeClassRegular && vc == UIUserInterfaceSizeClassCompact) {
+        self.cellWidth = self.view.bounds.size.width / 2.0f;
+        return;
+    }
+    
+    if (hc == UIUserInterfaceSizeClassCompact && vc == UIUserInterfaceSizeClassCompact) {
+        self.cellWidth = self.view.bounds.size.width / 1.5f;
+        return;
+    }
+    
+    self.cellWidth = 0;
 }
 
 @end

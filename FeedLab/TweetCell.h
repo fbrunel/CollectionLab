@@ -14,6 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-- (void)updateConstraintsForSize:(CGSize)size;
+- (void)updateConstraintsForWidth:(CGFloat)width;
 
 @end
