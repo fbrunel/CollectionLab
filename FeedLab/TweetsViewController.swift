@@ -12,7 +12,6 @@ class TweetsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     var collectionPresenter: CollectionPresenter!
-    var twitter: Twitter!
     var tweetsDataSource: FBDataSource!
     
     override func viewDidLoad() {
@@ -23,14 +22,17 @@ class TweetsViewController: UIViewController {
         super.viewWillAppear(animated)
 
         collectionPresenter = CollectionViewPresenter(view: collectionView)
-        twitter = Twitter()
-        tweetsDataSource = twitter.dataSourceForHomeTimeline()
+        tweetsDataSource = Twitter().dataSourceForHomeTimeline()
         
         self.fetchNextTweets()
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        return
     }
     
     //
