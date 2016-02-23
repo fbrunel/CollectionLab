@@ -28,7 +28,7 @@
     [self.profileImageView setImage:nil];
 }
 
-- (void)updateConstraintsForWidth:(CGFloat)width {
+- (void)setPreferredMaxLayoutWidth:(CGFloat)width {
     self.textLabel.preferredMaxLayoutWidth = width - 20.0f;
     self.textLabelWidthConstraint.constant = width - 20.0f;
 }

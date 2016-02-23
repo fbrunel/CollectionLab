@@ -8,14 +8,17 @@
 
 import UIKit
 
-protocol CollectionPresenter {
+protocol CollectionPresenter: class {
+    var collectionView: UICollectionView { get } // FIXME: a generic type should be used
     func addItemPresenter(item: ItemPresenter)
 }
 
 protocol ItemPresenter {
+    weak var collectionPresenter: CollectionPresenter? { get set } // FIXME: not sure it's necessary to expose this
     var identifier: String { get }
     func configureCell(cell: UICollectionViewCell, forSizing: Bool)
     func cleanupCell(cell: UICollectionViewCell)
+    func highlightDidChange(cell: UICollectionViewCell, highlighted: Bool)
 }
 
 //
@@ -32,8 +35,9 @@ class CollectionViewPresenter : NSObject, CollectionPresenter, UICollectionViewD
         self.collectionView.delegate = self
     }
     
-    func addItemPresenter(item: ItemPresenter) {
+    func addItemPresenter(var item: ItemPresenter) {
         registerCell(item.identifier)
+        item.collectionPresenter = self
         presenters[NSIndexPath(forItem: presenters.count, inSection: 0)] = item
     }
     
@@ -76,10 +80,10 @@ class CollectionViewPresenter : NSObject, CollectionPresenter, UICollectionViewD
     //
     
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-        return
+        presenters[indexPath]!.highlightDidChange(collectionView.cellForItemAtIndexPath(indexPath)!, highlighted: true)
     }
     
     func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
-        return
+        presenters[indexPath]!.highlightDidChange(collectionView.cellForItemAtIndexPath(indexPath)!, highlighted: false)
     }
 }

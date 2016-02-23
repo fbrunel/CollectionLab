@@ -76,9 +76,9 @@
     
     // FIXME: Find a way to do that better
     if (self.cellWidth == 0) {
-        [cell updateConstraintsForWidth:self.view.bounds.size.width];
+        cell.preferredMaxLayoutWidth = self.view.bounds.size.width;
     } else {
-        [cell updateConstraintsForWidth:self.cellWidth];
+        cell.preferredMaxLayoutWidth = self.cellWidth;
     }
     
     return cell;

@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-
-- (void)updateConstraintsForWidth:(CGFloat)width;
+@property (assign, nonatomic) CGFloat preferredMaxLayoutWidth;
 
 @end
