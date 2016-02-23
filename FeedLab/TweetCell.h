@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 FBL. All rights reserved.
 //
 
-#import "UIImageView+AFNetworking.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface TweetCell : UICollectionViewCell
 

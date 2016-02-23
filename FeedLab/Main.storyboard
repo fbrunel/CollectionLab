@@ -2,16 +2,58 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BAt-hO-bba">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Tweets-->
+        <!--Tweets Controller-->
+        <scene sceneID="F1Q-lf-N7a">
+            <objects>
+                <viewController id="Fgb-M0-Ajt" userLabel="Tweets Controller" customClass="TweetsViewController" customModule="FeedLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BtK-2x-aS4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Km8-jG-HwC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IKH-Mi-NR2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nTa-Iy-Pl7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="h4s-3f-Ylq">
+                                    <size key="itemSize" width="320" height="320"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nTa-Iy-Pl7" secondAttribute="trailing" id="D3Z-el-qVl"/>
+                            <constraint firstItem="Km8-jG-HwC" firstAttribute="top" secondItem="nTa-Iy-Pl7" secondAttribute="bottom" id="HW4-o6-Usa"/>
+                            <constraint firstItem="nTa-Iy-Pl7" firstAttribute="leading" secondItem="IKH-Mi-NR2" secondAttribute="leading" id="sNw-Gw-6Ce"/>
+                            <constraint firstItem="nTa-Iy-Pl7" firstAttribute="top" secondItem="IKH-Mi-NR2" secondAttribute="topMargin" id="xOk-Ke-MsM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tweets" id="YVF-C0-EYf" userLabel="Tweets"/>
+                    <connections>
+                        <outlet property="collectionView" destination="nTa-Iy-Pl7" id="Tgn-wd-WMu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsW-ja-1ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="-625"/>
+        </scene>
+        <!--Timeline-->
         <scene sceneID="USy-li-u45">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="jjj-F3-TUj" customClass="TimelineViewController" sceneMemberID="viewController">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="jjj-F3-TUj" userLabel="Timeline" customClass="TimelineViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Luq-sD-XYj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="0X5-de-gfE">
                             <size key="itemSize" width="320" height="600"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -19,10 +61,6 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="jjj-F3-TUj" id="xMI-e9-ir4"/>
-                            <outlet property="delegate" destination="jjj-F3-TUj" id="U9o-ob-5ro"/>
-                        </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Tweets" id="ZfT-oY-Erh"/>
                 </collectionViewController>
@@ -38,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="jjj-F3-TUj" kind="relationship" relationship="rootViewController" id="Kea-hD-Yln"/>
+                        <segue destination="Fgb-M0-Ajt" kind="relationship" relationship="rootViewController" id="bVx-6w-Hf1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ff-Nk-WVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
